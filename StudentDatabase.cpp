@@ -1,9 +1,12 @@
 #include "StudentDatabase.h"
+#include <string>
+#include <stdio.h>
+#include <iostream>
 
 // Insert a student into _students map
 void StudentDatabase::addStudent(Student *s) {
-  _student[_last_name] = s;
-  
+  _students[s->getLastName()] = s;
+  // s arrow get last name ->
   // TODO Implement this
 }
 
@@ -12,11 +15,11 @@ void StudentDatabase::addStudent(Student *s) {
 // print "<last_name> not found" if the student is not found.
 void StudentDatabase::printStudent(std::string _last_name) {
   // TODO Implement this
-  if (_student.count(_last_name) = 0) {
+  if (_students.count(_last_name) == 0) {
 	std::cout << "<" <<_last_name << "> not found" << std::endl;
   }
   else {
-	printInfo(_student.find("_last_name"));
+	printInfo(_students.find("_last_name"));
   }
 
 }
