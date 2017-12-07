@@ -1,4 +1,7 @@
 #include "MastersStudent.h"
+#include <string>
+#include <stdio.h>
+#include <iostream>
 
 // Constructor Implementations
 MastersStudent::MastersStudent(Student ug, int msy):
@@ -10,16 +13,53 @@ MastersStudent::MastersStudent(std::string fn, std::string ln,
 
 // New methods specific to MastersStudent
 float MastersStudent::getMsGpa() {
+	float Add_Grades_m;
+	Add_Grades_m = 0;
+	int n = _ms_grades.size();
+	for (int i = 0; i <= n; ++i) {
+		Add_Grades_m = Add_Grades_m + _ms_grades[i];
+	}
+	float Avg;
+	Avg = Add_Grades_m / n;
+	return Avg;
   // TODO Implement this 
-  return 0.0;
 }
 
 void MastersStudent::addMsGrade(float grade) {
   // TODO Implement this 
+	 _ms_grades.push_back(grade);
 }
 
 // Override Student's printInfo to include new fields
 void MastersStudent::printInfo() {
   Student::printInfo();
+  
+  std::string major_data;
+	switch(_major) {
+		case Major::EE:
+			major_data = "EE";
+			break;
+		case Major::ME:
+			major_data = "ME";
+			break;
+		case Major::CE:
+			major_data = "CE";
+			break;
+		case Major::CHE:
+			major_data = "CHE";
+			break;
+		case Major::BSE:
+			major_data = "BSE";
+			break;	
+		case Major::ART:
+			major_data = "ART";
+			break;
+		case Major::ARCH:
+			major_data = "ARCH";
+			break;
+	}
+	
+  std::cout << "MS" << " " << major_data << ": "<< _ms_grad_year << std::endl;
+  printf("MS GPA: %.2f\n", getMsGpa());
   // TODO Print additional MastersStudent fields
 }
