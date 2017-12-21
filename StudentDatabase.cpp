@@ -22,9 +22,9 @@ void StudentDatabase::printStudent(std::string _last_name) {
     std::cout << "<" <<_last_name << "> not found" << std::endl;
   }
   else {
-    (**it).printInfo();
+    it->second->printInfo();
+
     
   }
 }
-
 
