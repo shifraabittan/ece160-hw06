@@ -2,6 +2,7 @@
 #include <string>
 #include <stdio.h>
 #include <iostream>
+#include <vector>
 
 //define everything
 
@@ -29,9 +30,9 @@ float Student::getGpa() {
 	for (int i = 0; i <= n; ++i) {
 		Add_Grades = Add_Grades + _grades[i];
 	}
-	float Avg;
-	Avg = Add_Grades / n;
-	return Avg;
+	float Avg2;
+	Avg2 = Add_Grades / n;
+	return Avg2;
 }
 
 const std::string& Student::getLastName() {
