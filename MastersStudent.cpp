@@ -2,6 +2,7 @@
 #include <string>
 #include <stdio.h>
 #include <iostream>
+#include <vector>
 
 // Constructor Implementations
 MastersStudent::MastersStudent(Student ug, int msy):
@@ -19,9 +20,9 @@ float MastersStudent::getMsGpa() {
 	for (int i = 0; i <= n; ++i) {
 		Add_Grades_m = Add_Grades_m + _ms_grades[i];
 	}
-	float Avg;
-	Avg = Add_Grades_m / n;
-	return Avg;
+	float Avg1;
+	Avg1 = Add_Grades_m / n;
+	return Avg1;
   // TODO Implement this 
 }
 
